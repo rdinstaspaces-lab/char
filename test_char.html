@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Model Viewer – Character</title>
+
+  <!-- Load the model-viewer web component -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <style>
+    body { margin: 0; display: grid; place-items: center; min-height: 100vh; background:#0f1115; }
+    model-viewer { width: 600px; height: 400px; background: #1a1f29; }
+    .caption { color:#d7e1ff; font: 14px/1.4 system-ui, sans-serif; margin-top: 8px; opacity:.8; }
+  </style>
+</head>
+<body>
+
+  <!-- Put character.glb in the same folder as this HTML file -->
+  <model-viewer
+    src="character.glb"
+    autoplay
+    animation-name="*"
+    camera-controls
+    ar
+    shadow-intensity="1"
+    exposure="0.9"
+    interaction-prompt="none"
+    touch-action="pan-y"
+  >
+    <!-- Optional loading UI -->
+    <div slot="poster">Loading…</div>
+  </model-viewer>
+
+  <div class="caption">Drag to orbit • Scroll/pinch to zoom • Animation: “shame”</div>
+
+</body>
+</html>
